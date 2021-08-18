@@ -1,51 +1,34 @@
-function getPin(){
-    const pin=Math.round(Math.random()* 10000);
-    const pinString=pin+ '';
-    if(pinString.length ==4 ){
+function getPin() {
+    const pin = Math.round(Math.random() * 10000);
+    const pinString = pin + '';
+    if (pinString.length == 4) {
         return pin;
-    }else{
+    } else {
         return getPin();
     }
 }
-function generatePin(){
-    const pin =getPin();
-    document.getElementById('display-pin').value=pin;
+function generatePin() {
+    const pin = getPin();
+    document.getElementById('display-pin').value = pin;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getPin(){
-//     const pin =Math.round(Math.random()*10000);
-//     const pinString=pin + '';
-//     if(pinString.length == 4){
-//         return pin;
+//  pin generator section done 
+// number 
+document.getElementById('key-pad').addEventListener('click', function () {
+    const number = event.target.innerText;
+    const calcInput = document.getElementById('typed-numbers');
+    if(isNaN(number)){
+        if( number == 'C'){
+            calcInput.value='';
+        }
+    }else{
+        const previousNumber= calcInput.value;
+        const newNumber= previousNumber +number;
+        calcInput.value = newNumber;
     
-//     }
-//     else{
-//         return getPin();
-//     }
-// }
-// function generatePin(){
-//     const pin =getPin();
-//     document.getElementById('display-pin').value=pin;
+    }
+  
 
-// }
+})
+
+
