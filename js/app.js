@@ -13,7 +13,7 @@ function generatePin() {
 
 }
 //  pin generator section done 
-// number 
+// number section calcutae 
 document.getElementById('key-pad').addEventListener('click', function () {
     const number = event.target.innerText;
     const calcInput = document.getElementById('typed-numbers');
@@ -29,6 +29,23 @@ document.getElementById('key-pad').addEventListener('click', function () {
     }
   
 
-})
+});
+//varification 
+function verifyPin(){
+    const pin =document.getElementById('display-pin').value;
+    const typedNumbers=document.getElementById('typed-numbers').value;
+    const success= document.getElementById('notify-success');
+    const failError=document.getElementById('notify-fail');
+    if( pin == typedNumbers){
+
+  success.style.display='block';
+  failError.style.display='none';
 
 
+    }else{
+        
+        failError.style.display='block';
+        success.style.display='none';
+        
+    }
+}
